@@ -1,4 +1,4 @@
-using System;
+using System.Drawing.Imaging;
 using Xunit;
 
 namespace LemureIdentIcons.Unit.Test
@@ -8,8 +8,9 @@ namespace LemureIdentIcons.Unit.Test
         [Fact]
         public void GenerateIcon()
         {
-            var bitmap = new LemureIdentIcon().CreateIcon("Test lemure", IdentIconType.WhiteBlockIcon);
-            Assert.NotNull(bitmap);
+            var Bitmap = new LemureIdentIcon().CreateIcon("Test lemure", IdentIconType.WhiteBlockIcon);
+            Bitmap.Save("./lemure-white-block.jpg", ImageFormat.Jpeg);
+            Assert.NotNull(Bitmap);
         }
     }
 }
