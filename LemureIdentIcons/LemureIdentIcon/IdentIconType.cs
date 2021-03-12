@@ -6,6 +6,7 @@ namespace LemureIdentIcons
 {
     public enum IdentIconType
     {
-        WhiteBlockIcon = 1
+        WhiteBlockIcon = 1,
+        DarkBlockIcon = 2
     }
 }
