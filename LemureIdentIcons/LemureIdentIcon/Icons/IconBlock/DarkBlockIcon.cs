@@ -6,7 +6,7 @@ using LemureIdentIcons.Elements;
 
 namespace LemureIdentIcons.Icons.IconBlock
 {
-    internal class DarkBlockIcon : BaseBlockIcon, ILemureIcon
+    internal class DarkBlockIcon : BaseBlockIcon
     {
         protected override Bitmap CreateImageIcon(List<BlockDrawing> blockDrawings)
         {

@@ -7,7 +7,7 @@ using LemureIdentIcons.Hashs;
 
 namespace LemureIdentIcons.Icons.IconBlock
 {
-    internal class WhiteBlockIcon : BaseBlockIcon, ILemureIcon
+    internal class WhiteBlockIcon : BaseBlockIcon
     {
         protected override Bitmap CreateImageIcon(List<BlockDrawing> blockDrawings)
         {
