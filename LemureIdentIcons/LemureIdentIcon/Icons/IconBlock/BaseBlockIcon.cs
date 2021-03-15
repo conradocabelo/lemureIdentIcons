@@ -6,10 +6,14 @@ using System.Linq;
 
 namespace LemureIdentIcons.Icons.IconBlock
 {
-    internal abstract class BaseBlockIcon
+    internal abstract class BaseBlockIcon: ILemureIcon
     {
         protected Grid Grid;
         protected Color Color;
+
+        public int SizeBlocks { get; set; }
+        public int Width { get; set; }
+        public int Heigth { get; set; }
 
         protected virtual List<BlockDrawing> CreateBlockDrawing(Grid grid)
         {
@@ -40,7 +44,7 @@ namespace LemureIdentIcons.Icons.IconBlock
 
             Color = CreateBrushColor(hash);
 
-            Grid = new Grid(250, 250, 5);
+            Grid = new Grid(this.Heigth, Width, SizeBlocks);
             Grid.CreateGrid(hash);
 
             List<BlockDrawing> blockDrawings = CreateBlockDrawing(Grid);

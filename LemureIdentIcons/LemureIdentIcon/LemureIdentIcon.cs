@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Drawing;
 using LemureIdentIcons.Icons;
 using LemureIdentIcons.Icons.IconBlock;
 
@@ -7,8 +6,8 @@ namespace LemureIdentIcons
 {
     public class LemureIdentIcon
     {
-        public Bitmap CreateIcon(string Value, IdentIconType IdentIconType = IdentIconType.WhiteBlockIcon) => 
-            MakeLemureIconClass(IdentIconType).Draw(Value);
+        public ILemureIcon CreateLemure(IdentIconType IdentIconType = IdentIconType.WhiteBlockIcon) =>
+            MakeLemureIconClass(IdentIconType).SetSizeIcon(250, 250).SetSizeOfBlock(5);
 
         private ILemureIcon MakeLemureIconClass(IdentIconType identIconType)
         {
@@ -20,5 +19,7 @@ namespace LemureIdentIcons
                     throw new NotImplementedException("Icon type not implemented");
             }
         }
+
+
     }
 }
