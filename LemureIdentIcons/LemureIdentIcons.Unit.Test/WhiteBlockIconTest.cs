@@ -26,5 +26,38 @@ namespace LemureIdentIcons.Unit.Test
 
             Assert.NotNull(Bitmap);
         }
+
+        [Fact]
+        public void GenerateIconSHA1()
+        {
+            ILemureIcon lemureIcon = new LemureIdentIcon().CreateLemure();
+            lemureIcon.UseHash(Hashs.HashType.SHA1);
+
+            var Bitmap = lemureIcon.Draw("lemureteste");
+            Bitmap.Save("./lemure-white-block-sha1.jpg", ImageFormat.Jpeg);
+            Assert.NotNull(Bitmap);
+        }
+
+        [Fact]
+        public void GenerateIconSHA256()
+        {
+            ILemureIcon lemureIcon = new LemureIdentIcon().CreateLemure();
+            lemureIcon.UseHash(Hashs.HashType.SHA256);
+
+            var Bitmap = lemureIcon.Draw("lemureteste");
+            Bitmap.Save("./lemure-white-block-sha256.jpg", ImageFormat.Jpeg);
+            Assert.NotNull(Bitmap);
+        }
+
+        [Fact]
+        public void GenerateIconSHA512()
+        {
+            ILemureIcon lemureIcon = new LemureIdentIcon().CreateLemure();
+            lemureIcon.UseHash(Hashs.HashType.SHA512);
+
+            var Bitmap = lemureIcon.Draw("lemureteste");
+            Bitmap.Save("./lemure-white-block-sha512.jpg", ImageFormat.Jpeg);
+            Assert.NotNull(Bitmap);
+        }
     }
 }

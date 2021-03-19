@@ -14,6 +14,7 @@ namespace LemureIdentIcons.Icons.IconBlock
         public int SizeBlocks { get; set; }
         public int Width { get; set; }
         public int Heigth { get; set; }
+        public HashType HashType { get; set; }
 
         protected virtual List<BlockDrawing> CreateBlockDrawing(Grid grid)
         {
@@ -40,7 +41,7 @@ namespace LemureIdentIcons.Icons.IconBlock
 
         public Bitmap Draw(string Value)
         {
-            byte[] hash = Value.ToMd5();
+            byte[] hash = new LemureHash().Compute(Value, HashType);
 
             Color = CreateBrushColor(hash);
 
