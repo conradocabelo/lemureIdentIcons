@@ -1,4 +1,5 @@
-﻿using LemureIdentIcons.Icons;
+﻿using LemureIdentIcons.Hashs;
+using LemureIdentIcons.Icons;
 
 namespace LemureIdentIcons
 {
@@ -15,6 +16,12 @@ namespace LemureIdentIcons
             lemureIcon.Width = Width;
             lemureIcon.Heigth = Heigth;
 
+            return lemureIcon;
+        }
+
+        public static ILemureIcon UseHash(this ILemureIcon lemureIcon, HashType hashType)
+        {
+            lemureIcon.HashType = hashType;
             return lemureIcon;
         }
     }

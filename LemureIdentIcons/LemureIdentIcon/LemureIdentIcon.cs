@@ -7,7 +7,7 @@ namespace LemureIdentIcons
     public class LemureIdentIcon
     {
         public ILemureIcon CreateLemure(IdentIconType IdentIconType = IdentIconType.WhiteBlockIcon) =>
-            MakeLemureIconClass(IdentIconType).SetSizeIcon(250, 250).SetSizeOfBlock(5);
+            MakeLemureIconClass(IdentIconType).SetSizeIcon(250, 250).SetSizeOfBlock(5).UseHash(Hashs.HashType.MD5);
 
         private ILemureIcon MakeLemureIconClass(IdentIconType identIconType)
         {
